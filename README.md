@@ -33,7 +33,7 @@
 
 1. Clonez ce dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/lets-cook.git
+   git clone https://github.com/DzmitryiKorjik/Note.git
    ```
 2. Accédez au répertoire du projet :
    ```bash
@@ -42,7 +42,7 @@
 
 ### Déploiement
 
-- Le projet sera déployé sur **Vercel**. Accédez à l'application ici : [Let's Cook](https://lets-cook.vercel.app).
+- Le projet sera déployé sur **Vercel**. Accédez à l'application ici : [Let's Cook](https://note-swart-psi.vercel.app/).
 
 ## Auteur
 
