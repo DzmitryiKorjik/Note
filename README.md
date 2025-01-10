@@ -3,10 +3,11 @@
 
 ## Description
 
-**Note** est une application web développée entièrement en **Vanilla JavaScript** (sans frameworks). Pour sauvegarder différents enregistrements, marquer quand un enregistrement a été fait et quand il a été supprimé.
+**Note** est une application permettra aux utilisateurs d'ajouter des tâches, de les marquer comme complétées et de les supprimer..
 
 ### Objectifs pédagogiques
-- Structurer un projet web avec des bonnes pratiques : **HTML sémantique**, **CSS modularisé**, et **JavaScript en modules**.
+- Utiliser les compétences en JavaScript pour créer une application de gestion de tâches simple mais efficace.
+- Structurer un projet web avec des bonnes pratiques : **HTML sémantique**, **CSS modularisé**, et **JavaScript**.
 - Préparer le déploiement d'une application web sur **Vercel**.
 
 ## Fonctionnalités principales
