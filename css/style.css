@@ -30,13 +30,24 @@ section {
         font-family: 'Yellowtail';
     }
     input {
-        padding: 10px;
-        border: 1px solid white;
-        border-radius: 10px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
+        padding: 12px 15px; /* Просторное внутреннее заполнение */
+        border: 2px solid #333; /* Темная рамка */
+        border-radius: 8px; /* Мягкие углы */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Легкая тень для объема */
+        font-size: 16px; /* Увеличенный размер текста */
+        font-family: 'Arial', sans-serif; /* Читаемый шрифт */
+        outline: none; /* Убираем стандартное обрамление */
+        width: 100%; /* Ширина на всю доступную область */
+        max-width: 300px; /* Максимальная ширина */
+        transition: border-color 0.3s, box-shadow 0.3s; /* Плавный переход для эффектов */
+        margin: 0 auto; /* Центровка и отступы */
+        &:hover {
+            border-color: #007bff; /* Изменение цвета рамки */
+            box-shadow: 0 6px 8px rgba(0, 123, 255, 0.7), 0 2px 4px rgba(0, 123, 255, 0.4);
+            cursor: pointer; 
+        }
+  
     }
     .list {
         margin-top: 20px;

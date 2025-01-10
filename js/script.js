@@ -1,28 +1,61 @@
-const taskInput = document.querySelector('#taskInput');
+document.addEventListener("DOMContentLoaded", function () {
+  const taskInput = document.querySelector("#taskInput");
+  const taskList = document.querySelector("#taskList");
 
-taskInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        const taskText = taskInput.value; // Obtenir du texte à partir d'une entrée
-        if (taskText.trim() === '') return; // Vérifier la présence d'une chaîne vide
-        const newTask = document.createElement('li'); // Création d'un nouvel élément
-        newTask.textContent = taskText; // Ajouter du texte à un élément
+  // Fonction pour sauvegarder les tâches dans le local storage
+  function saveTasks() {
+    const tasks = []; // Array
+    taskList.querySelectorAll("li").forEach((task) => {
+      tasks.push({
+        text: task.textContent,
+        isCrossed: task.style.textDecoration === "line-through",
+      });
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks)); // Enregistrer les tâches
+  }
 
-        const taskList = document.querySelector('#taskList'); // Recherche de l'élément parent
-        if (taskList) {
-            taskList.appendChild(newTask); // Ajouter une nouvelle tâche à la liste
-            taskInput.value = ''; // Effacer le champ de saisie
+  // Fonction pour charger les tâches à partir du local storage
+  function loadTasks() {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    savedTasks.forEach((taskData) => {
+      addTask(taskData.text, taskData.isCrossed);
+    });
+  }
 
-            // Ajouter un gestionnaire d'événement pour le clic
-            let isCrossed = false; // Drapeau pour la surveillance de l'état
-            newTask.addEventListener('click', function() {
-                if (!isCrossed) {
-                    newTask.style.textDecoration = 'line-through'; // Rayer le texte
-                    isCrossed = true;
-                } else {
-                    newTask.remove(); // Supprimer un élément
-                }
-            });
-        }
+  // Fonction générique pour ajouter une tâche
+  function addTask(text, isCrossed = false) {
+    const newTask = document.createElement("li");
+    newTask.textContent = text;
+    if (isCrossed) {
+      newTask.style.textDecoration = "line-through";
     }
-});
 
+    let crossed = isCrossed; // Utiliser une variable locale pour suivre l'état
+    newTask.addEventListener("click", function () {
+      if (!crossed) {
+        newTask.style.textDecoration = "line-through";
+        crossed = true;
+      } else {
+        newTask.remove(); // Supprimer un élément
+        saveTasks(); // Enregistrer les modifications
+      }
+    });
+
+    taskList.appendChild(newTask);
+  }
+
+  // Charger les tâches au démarrage
+  loadTasks();
+
+  // Écouteur pour ajouter une nouvelle tâche
+  taskInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      const taskText = taskInput.value.trim(); // Supprimer les espaces inutiles
+      if (taskText === "") return; // Vérifier les entrées vides
+
+      addTask(taskText); // Ajouter la tâche
+      taskInput.value = ""; // Effacer le champ d'entrée
+      saveTasks(); // Enregistrer les tâches
+    }
+  });
+});
