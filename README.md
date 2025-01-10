@@ -1,12 +1,12 @@
 # Note
 
-
 ## Description
 
 **Note** est une application permettra aux utilisateurs d'ajouter des tâches, de les marquer comme complétées et de les supprimer..
 
 ### Objectifs pédagogiques
 - Utiliser les compétences en JavaScript pour créer une application de gestion de tâches simple mais efficace.
+- Intégre la persistance des données grâce à localStorage, permettant ainsi aux tâches de rester disponibles même après le rechargement de la page
 - Structurer un projet web avec des bonnes pratiques : **HTML sémantique**, **CSS modularisé**, et **JavaScript**.
 - Préparer le déploiement d'une application web sur **Vercel**.
 
@@ -15,6 +15,7 @@
 1. **Enregistrement des données :**
    - Saisissez un mot-clé pour sauvegarder une note.
    - Les résultats sont mis à jour lorsque l'on appuie sur le bouton « Enter ».
+   - Utilisez localStorage pour sauvegarder, récupérer et mettre à jour la liste des tâches.
 
 ## Architecture du projet
 
