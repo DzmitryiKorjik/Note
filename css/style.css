@@ -1,0 +1,66 @@
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+body {
+    background: linear-gradient(90deg, #1cb9e5, #9b4ed6);
+}
+
+@font-face {
+    font-family: 'PlaywriteAUSA';
+    src: url('../fonts/PlaywriteAUSA-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Yellowtail';
+    src: url('../fonts/Yellowtail-Regular.ttf');
+}
+
+section {
+    border: 2px solid white;
+    border-radius: 10px;
+    min-height: calc(100vh - 105px);
+    .title {
+        color: #fff;
+        text-align: center;
+        font-size: 2em;
+        font-family: 'Yellowtail';
+    }
+    input {
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .list {
+        margin-top: 20px;
+        margin-left: 10%;
+        ol {
+            padding: 0;
+            margin: 0;
+            color:bisque;
+            li {
+                margin-bottom: 10px;
+                font-weight: bold;
+                font-size: 1em;
+                font-family: 'PlaywriteAUSA';
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: end;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.2em;
+    font-family: 'Yellowtail';
+}
