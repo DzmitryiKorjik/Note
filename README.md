@@ -39,7 +39,7 @@
    ```
 2. Accédez au répertoire du projet :
    ```bash
-   cd lets-cook
+   cd Note
    ```
 
 ### Déploiement
